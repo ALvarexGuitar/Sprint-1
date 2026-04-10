@@ -1,4 +1,6 @@
-package repositoriotareas.logica;
+package repositoriotareas.controlador;
+
+// se verifico la parte de optencion de Tareas correctamente
 
 import repositoriotareas.baseDatos.TareaDAO;
 import repositoriotareas.modelo.Tarea;

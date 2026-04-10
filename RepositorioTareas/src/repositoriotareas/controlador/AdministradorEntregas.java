@@ -1,6 +1,6 @@
-package repositoriotareas.logica;
+package repositoriotareas.controlador;
 
-import repositoriotareas.baseDatos.EntregaDAO;
+import repositoriotareas.baseDatos.EntregaDAO;  
 import repositoriotareas.modelo.Entrega;
 
 public class AdministradorEntregas {
