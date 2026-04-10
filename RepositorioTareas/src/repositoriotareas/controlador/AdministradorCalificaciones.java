@@ -1,6 +1,6 @@
-package repositoriotareas.logica;
+package repositoriotareas.controlador;
 
-import repositoriotareas.baseDatos.CalificacionDAO;
+import repositoriotareas.baseDatos.CalificacionDAO; 
 import repositoriotareas.modelo.Calificacion;
 
 public class AdministradorCalificaciones {
