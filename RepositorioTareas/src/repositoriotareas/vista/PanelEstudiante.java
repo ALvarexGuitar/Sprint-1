@@ -1,7 +1,7 @@
 package repositoriotareas.vista;
-
+import repositoriotareas.logic.AdministradorEntregas;
 import repositoriotareas.logic.AdministradorTareas;
-import repositoriotareas.model.Tarea;
+import repositoriotareas.modelo.Tarea;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -19,18 +19,23 @@ public class PanelEstudiante extends JPanel {
         modelo = new DefaultTableModel(new String[]{"ID","Titulo","Desc","Fecha"},0);
         tabla = new JTable(modelo);
 
-    txtArchivo = new JTextField(20);
+        txtArchivo = new JTextField(20);
         JButton btn = new JButton("Entregar");
 
         JPanel abajo = new JPanel();
         abajo.add(txtArchivo);
         abajo.add(btn);
 
+        
+        btn.addActionListener(e -> {
+            int fila = tabla.getSelectedRow();
+            int id = (int) tabla.getValueAt(fila,0);
+            
+            new AdministradorEntregas().entregarTarea(id, txtArchivo.getText());
+        });
+        
         add(new JScrollPane(tabla), BorderLayout.CENTER);
         add(abajo, BorderLayout.SOUTH);
-
-        //evento de entregar para dia 4
-        
         cargar();
 
 
