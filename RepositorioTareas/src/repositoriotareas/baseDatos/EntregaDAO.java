@@ -1,9 +1,9 @@
 package repositoriotareas.baseDatos;
 
-import repositoriotareas.modelo.Entrega;
-
 import java.sql.*;
 import java.util.ArrayList;
+
+import repositoriotareas.model.Entrega;
 
 public class EntregaDAO {
 
@@ -39,8 +39,7 @@ public class EntregaDAO {
                 lista.add(new Entrega(
                         rs.getInt("id"),
                         rs.getInt("tarea_id"),
-                        rs.getString("nombre_archivo"),
-                        rs.getString("fecha_entrega")
+                        rs.getString("nombre_archivo")
                 ));
             }
 

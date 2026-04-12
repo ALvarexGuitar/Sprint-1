@@ -1,6 +1,5 @@
-package repositoriotareas.vista;
+package repositoriotareas.interfazUsuario;
 
-import repositoriotareas.modelo.Calificacion;
 import repositoriotareas.logic.AdministradorCalificaciones;
 
 import javax.swing.*;

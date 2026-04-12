@@ -1,9 +1,10 @@
 
 package repositoriotareas.baseDatos;
 
-import repositoriotareas.modelo.Tarea;
 import java.sql.*;
 import java.util.ArrayList;
+
+import repositoriotareas.model.Tarea;
 
 public class TareaDAO {
 

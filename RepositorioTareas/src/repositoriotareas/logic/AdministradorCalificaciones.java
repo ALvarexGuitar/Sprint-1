@@ -1,12 +1,12 @@
-package repositoriotareas.controlador;
+package repositoriotareas.logic;
 
-import repositoriotareas.baseDatos.CalificacionDAO; 
-import repositoriotareas.modelo.Calificacion;
+import repositoriotareas.baseDatos.CalificacionDAO;
+import repositoriotareas.model.Calificacion;
 
 public class AdministradorCalificaciones {
     private CalificacionDAO dao = new CalificacionDAO();
 
-    public void calificarEntrega(int entregaId, double nota, String comentario) {
+    public void calificar(int entregaId, double nota, String comentario) {
         dao.insertar(new Calificacion(0, entregaId, nota, comentario));
     }
 

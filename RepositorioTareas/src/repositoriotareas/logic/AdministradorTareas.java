@@ -1,9 +1,10 @@
-package repositoriotareas.controlador;
+package repositoriotareas.logic;
 
 // se verifico la parte de optencion de Tareas correctamente
 
 import repositoriotareas.baseDatos.TareaDAO;
-import repositoriotareas.modelo.Tarea;
+import repositoriotareas.model.Tarea;
+
 import java.util.ArrayList;
 
 public class AdministradorTareas {
