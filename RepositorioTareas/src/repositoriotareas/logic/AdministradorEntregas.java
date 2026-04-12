@@ -1,8 +1,8 @@
-package repositoriotareas.controlador;
+package repositoriotareas.logic;
 
 // ala espera del archivo EntregaDAO por parte de mi compañero 
-import repositoriotareas.baseDatos.EntregaDAO;  
-import repositoriotareas.modelo.Entrega;
+import repositoriotareas.baseDatos.EntregaDAO;
+import repositoriotareas.model.Entrega;
 
 public class AdministradorEntregas {                                                                            //
     private EntregaDAO dao = new EntregaDAO();

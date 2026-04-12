@@ -2,9 +2,9 @@ package repositoriotareas.baseDatos;
 
 
 
-import repositoriotareas.modelo.Calificacion;
-
 import java.sql.*;
+
+import repositoriotareas.model.Calificacion;
 
 public class CalificacionDAO {
 

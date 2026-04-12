@@ -1,5 +1,5 @@
 
-package repositoriotareas.modelo;
+package repositoriotareas.model;
 
 
 public class Calificacion{
