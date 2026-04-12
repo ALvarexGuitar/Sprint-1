@@ -1,9 +1,9 @@
 package repositoriotareas.interfazUsuario;
-
-import repositoriotareas.logic.AdministradorCalificaciones;
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
+import repositoriotareas.logic.AdministradorCalificaciones;
+import repositoriotareas.model.Calificacion;
+
 
 public class PanelCalificaciones extends JPanel {
 
@@ -17,7 +17,8 @@ public class PanelCalificaciones extends JPanel {
         txtComentario = new JTextField();
 
         JButton btnGuardar = new JButton("Calificar");
-
+        JButton btnVer = new JButton("Ver");
+        
         add(new JLabel("Entrega ID"));
         add(txtEntrega);
         add(new JLabel("Nota"));
@@ -25,7 +26,8 @@ public class PanelCalificaciones extends JPanel {
         add(new JLabel("Comentario"));
         add(txtComentario);
         add(btnGuardar);
-
+        add(btnVer);
+        
         btnGuardar.addActionListener(e -> {
             new AdministradorCalificaciones().calificar(
                     Integer.parseInt(txtEntrega.getText()),
@@ -34,6 +36,14 @@ public class PanelCalificaciones extends JPanel {
             );
         });
 
-        //mostrar nota para dia 5
+        btnVer.addActionListener(e -> {
+            Calificacion c = new AdministradorCalificaciones()
+                    .obtenerCalificacion(Integer.parseInt(txtEntrega.getText()));
+
+            if (c != null) {
+                JOptionPane.showMessageDialog(this,
+                        "Nota: " + c.getNota() + "\nComentario: " + c.getComentario());
+            }
+        });
     }
 }
