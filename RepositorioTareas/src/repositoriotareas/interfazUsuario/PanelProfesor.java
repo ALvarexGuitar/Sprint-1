@@ -48,16 +48,21 @@ public class PanelProfesor extends JPanel {
 
         btn.addActionListener(e -> {
 
-            String t = txtTitulo.getText();
-            String d = txtDesc.getText();
-            String f = txtFecha.getText();
+        String t = txtTitulo.getText();
+        String d = txtDesc.getText();
+        String f = txtFecha.getText();
 
-            administrador.crearTarea(t, d, f);
+    try {
+        administrador.crearTarea(t, d, f);
 
-            JOptionPane.showMessageDialog(this, "Tarea enviada al sistema correctamente");
-            limpiarCampos();
-            cargarTabla();
-        });
+        JOptionPane.showMessageDialog(this, "Tarea creada correctamente");
+        limpiarCampos();
+        cargarTabla();
+
+        } catch (IllegalArgumentException ex) {
+    JOptionPane.showMessageDialog(this, ex.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
+        }
+    });
 
         cargarTabla();
     }

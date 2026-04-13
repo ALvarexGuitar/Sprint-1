@@ -29,21 +29,38 @@ public class PanelCalificaciones extends JPanel {
         add(btnVer);
         
         btnGuardar.addActionListener(e -> {
-            new AdministradorCalificaciones().calificar(
-                    Integer.parseInt(txtEntrega.getText()),
-                    Double.parseDouble(txtNota.getText()),
-                    txtComentario.getText()
-            );
+
+        try {
+            int id = Integer.parseInt(txtEntrega.getText().trim());
+            double nota = Double.parseDouble(txtNota.getText().trim());
+            String comentario = txtComentario.getText().trim();
+
+            new AdministradorCalificaciones().calificar(id, nota, comentario);
+
+                JOptionPane.showMessageDialog(this, "Calificación guardada");
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Datos inválidos");
+        }
         });
 
         btnVer.addActionListener(e -> {
-            Calificacion c = new AdministradorCalificaciones()
-                    .obtenerCalificacion(Integer.parseInt(txtEntrega.getText()));
+            try {
+                int id = Integer.parseInt(txtEntrega.getText().trim());
 
-            if (c != null) {
-                JOptionPane.showMessageDialog(this,
-                        "Nota: " + c.getNota() + "\nComentario: " + c.getComentario());
-            }
+                Calificacion c = new AdministradorCalificaciones()
+                .obtenerCalificacion(id);
+
+        if (c != null) {
+            JOptionPane.showMessageDialog(this,
+                "Nota: " + c.getNota() + "\nComentario: " + c.getComentario());
+        } else {
+            JOptionPane.showMessageDialog(this, "No existe calificación");
+        }
+
+        } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "ID inválido");
+        }   
         });
     }
 }
