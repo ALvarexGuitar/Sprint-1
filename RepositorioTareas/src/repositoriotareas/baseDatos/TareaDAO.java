@@ -42,13 +42,11 @@ public class TareaDAO {
     }
 
 
-    public Calificacion verCalificacion(int entregaId) {
-        String sql = """
-                SELECT c.id, c.entrega_id, c.nota, c.comentario
-                FROM entregas e
-                JOIN calificaciones c ON e.id = c.entrega_id
-                WHERE e.id = ?
-                """;
+       public Calificacion verCalificacion(int entregaId) {
+        String sql = "SELECT c.id, c.entrega_id, c.nota, c.comentario "
+                   + "FROM entregas e "
+                   + "JOIN calificaciones c ON e.id = c.entrega_id "
+                   + "WHERE e.id = ?";
 
         try (Connection conn = ConexionBD.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {
