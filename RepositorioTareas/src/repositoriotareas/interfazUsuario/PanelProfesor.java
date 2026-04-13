@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import repositoriotareas.logic.AdministradorTareas;
+import repositoriotareas.controlador.AdministradorTareas;
 
 public class PanelProfesor extends JPanel {
 

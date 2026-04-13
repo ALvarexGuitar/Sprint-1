@@ -1,11 +1,11 @@
 package repositoriotareas.interfazUsuario;
 
-import repositoriotareas.logic.AdministradorTareas;
+import repositoriotareas.controlador.AdministradorTareas;
 import repositoriotareas.model.Tarea;
 
 // Nota: Si C3 aún no te pasa AdministradorEntregas, 
 // esta línea podría salir en rojo. Si es así, coméntala.
-import repositoriotareas.logic.AdministradorEntregas; 
+import repositoriotareas.controlador.AdministradorEntregas; 
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

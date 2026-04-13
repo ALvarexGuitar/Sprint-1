@@ -1,4 +1,4 @@
-package repositoriotareas.logic;
+package repositoriotareas.controlador;
 
 // se verifico la parte de optencion de Tareas correctamente
 
