@@ -1,7 +1,7 @@
 package repositoriotareas.interfazUsuario;
 import java.awt.*;
 import javax.swing.*;
-import repositoriotareas.logic.AdministradorCalificaciones;
+import repositoriotareas.controlador.AdministradorCalificaciones;
 import repositoriotareas.model.Calificacion;
 
 

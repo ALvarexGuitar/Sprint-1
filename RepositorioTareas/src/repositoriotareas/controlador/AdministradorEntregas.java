@@ -1,4 +1,4 @@
-package repositoriotareas.logic;
+package repositoriotareas.controlador;
 
 // ala espera del archivo EntregaDAO por parte de mi compañero 
 import repositoriotareas.baseDatos.EntregaDAO;
