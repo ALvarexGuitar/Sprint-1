@@ -4,6 +4,7 @@ package repositoriotareas.baseDatos;
 import java.sql.*;
 import java.util.ArrayList;
 
+import repositoriotareas.model.Calificacion;
 import repositoriotareas.model.Tarea;
 
 public class TareaDAO {
@@ -39,4 +40,36 @@ public class TareaDAO {
         }
         return lista;
     }
+
+
+    public Calificacion verCalificacion(int entregaId) {
+        String sql = """
+                SELECT c.id, c.entrega_id, c.nota, c.comentario
+                FROM entregas e
+                JOIN calificaciones c ON e.id = c.entrega_id
+                WHERE e.id = ?
+                """;
+
+        try (Connection conn = ConexionBD.conectar();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, entregaId);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Calificacion(
+                        rs.getInt("id"),
+                        rs.getInt("entrega_id"),
+                        rs.getDouble("nota"),
+                        rs.getString("comentario")
+                );
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }
