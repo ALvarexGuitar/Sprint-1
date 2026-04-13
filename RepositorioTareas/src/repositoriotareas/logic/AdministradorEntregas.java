@@ -1,6 +1,6 @@
 package repositoriotareas.logic;
 
-// ala espera del archivo EntregaDAO por parte de mi compañero 
+//Completado 
 import repositoriotareas.baseDatos.EntregaDAO;
 import repositoriotareas.model.Entrega;
 
